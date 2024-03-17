@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Hero Section Begin -->
+{% for home in homeobject.home_photo1 %}
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-text"  align="center">
+                            <h1>{{ home.name }}</h1>
+                            <p style="color:black; font-size: 30px;">
+                                <mark style="background-color: rgba(255, 0, 0, 0.5);">{{home.address}}</mark>
+                            </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="{{home.photo.url}}"></div>
+        </div>
+    </section>
+{%endfor%}
+
+    <!-- Hero Section End -->
+    <hr>
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+        <div class="section-title">
+            <h2>Maktab formasi haqida ma'lumot</h2>
+        </div>
+        <hr>
+        <hr>
+        <hr>
+        {% for home in homeobject.home_uniform%}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span></span>
+                            <h2>{{home.detail}}</h2>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <img src="{{home.photo.url}}" alt="" width='575px' height="400px">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <hr>
+            <hr>
+            <hr>
+        </div>
+        {%endfor%}
+    </section>
+    <hr>
+
+    <hr>
+    <!-- Home Room Section Begin -->
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Bizning maktab qulayliklari</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="hp-room-items">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="{% static 'img/room/room1.jpg' %}" width='470px' height="600px">
+                            <div class="hr-text">
+                                <h3>Xona nomi</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">O'lchami:</td>
+                                            <td>m x n</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="{% static 'img/room/room2.jpg' %}" width='470px' height="600px">
+                            <div class="hr-text">
+                                <h3>Xona nomi</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">O'lchami:</td>
+                                            <td>m x n</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="{% static 'img/room/room3.jpg' %}" width='470px' height="600px">
+                            <div class="hr-text">
+                                <h3>Xona nomi</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">O'lchami:</td>
+                                            <td>m x n</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="{% static 'img/room/room4.jpg' %}" width='470px' height="600px">
+                            <div class="hr-text">
+                                <h3>Xona nomi</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">O'lchami:</td>
+                                            <td>m x n</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Xususiyat:</td>
+                                            <td>------</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+    <hr>
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Bizning blogimiz va tadbirimiz</h2>
+                    </div>
+                </div>
+            </div>
+            {% for home in homeobject.home_blog %}
+            {% if forloop.counter == 1 %}
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="blog-item set-bg" data-setbg="{{ home.photo.url }}" width='370px' height="450px">
+                        <div class="bi-text">
+                            <h4><a href="#">{{ home.short_name }} </a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{home.data}}</div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {% if forloop.counter == 2 %}
+                <div class="col-lg-4">
+                    <div class="blog-item set-bg" data-setbg="{{ home.photo.url }}" width='370px' height="450px">
+                        <div class="bi-text">
+                            <h4><a href="#">{{ home.short_name }} </a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{home.data}}</div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {% if forloop.counter == 3 %}
+                <div class="col-lg-4">
+                    <div class="blog-item set-bg" data-setbg="{{ home.photo.url }}" width='370px' height="450px">
+                        <div class="bi-text">
+                            <h4><a href="#">{{ home.short_name }} </a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{home.data}}</div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {% if forloop.counter == 4 %}
+                <div class="col-lg-8">
+                    <div class="blog-item small-size set-bg" data-setbg="{{ home.photo.url }}" width='770px' height="400px">
+                        <div class="bi-text">
+                            <h4><a href="#">{{ home.short_name }} </a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{home.data}}</div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {% if forloop.counter == 5 %}
+                <div class="col-lg-4">
+                    <div class="blog-item small-size set-bg" data-setbg="{{ home.photo.url }}" width='370px' height="400px">
+                        <div class="bi-text">
+                            <h4><a href="#">{{ home.short_name }} </a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{home.data}}</div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section End -->
+    <hr>
+
+{% endblock content %}

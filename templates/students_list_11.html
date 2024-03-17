@@ -1,0 +1,122 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+<br>
+<div align="center">
+    <h1>11-sinf o'quvchilari ro'yxati:</h1>
+</div>
+
+<hr>
+<div class="d-grid gap-2"  align="right">
+    <a href="{% url 'students_new' %}"><button class="btn btn-primary" type="button">Yangi o'quvchi qo'shish:</button></a>
+</div>
+
+<h2>Sinf : "A"</h2>
+<h3>Sinf raxbari: Eshonqulov Shahzod</h3>
+
+<br>
+
+<table class="table table-bordered border-primary">
+        <thead>
+          <tr>
+            <th scope="col">&#8470;</th>
+            <th scope="col">I/F/Sh</th>
+            <th scope="col">O'quvchi sinfi</th>
+            <th scope="col">Batafsil</th>
+          </tr>
+        </thead>
+            {% for student in object_list %}
+                {% if student.class_letter == "A" or student.class_letter == "a"   %}
+              {% if  student.class_id == 11  %}
+                <div class="product">
+                    <tbody>
+                        <tr>
+                          <th scope="row">{{ student.id }}</th>
+                          <td>{{ student.name }}</td>
+                          <td>{{ student.class_id }} {{student.class_letter}}</td>
+                          <td><a href="{% url 'students_detail' student.pk %}"><button  type="button" class="btn btn-success">Kirish</button></a></td>
+                        </tr>
+                    </tbody>
+                </div>
+            {% endif %}
+                {% endif %}
+            {% endfor %}
+</table>
+
+<hr>
+<br>
+
+<h2>Sinf : "B"</h2>
+<h3>Sinf raxbari: Eshonqulov Shahzod</h3>
+
+<br>
+
+<table class="table table-bordered border-primary">
+        <thead>
+          <tr>
+            <th scope="col">&#8470;</th>
+            <th scope="col">I/F/Sh</th>
+            <th scope="col">O'quvchi sinfi</th>
+            <th scope="col">Batafsil</th>
+          </tr>
+        </thead>
+            {% for student in object_list %}
+                {% if student.class_letter == "B" or student.class_letter == "b"    %}
+              {% if  student.class_id == 11  %}
+                <div class="product">
+                    <tbody>
+                        <tr>
+                          <th scope="row">{{ student.id }}</th>
+                          <td>{{ student.name }}</td>
+                          <td>{{ student.class_id }} {{student.class_letter}}</td>
+                          <td><a href="{% url 'students_detail' student.pk %}"><button  type="button" class="btn btn-success">Kirish</button></a></td>
+                        </tr>
+                    </tbody>
+                </div>
+            {% endif %}
+                {% endif %}
+            {% endfor %}
+</table>
+
+<hr>
+<br>
+
+<h2>Sinf : "C"</h2>
+<h3>Sinf raxbari: Eshonqulov Shahzod</h3>
+
+<br>
+
+<table class="table table-bordered border-primary">
+        <thead>
+          <tr>
+            <th scope="col">&#8470;</th>
+            <th scope="col">I/F/Sh</th>
+            <th scope="col">O'quvchi sinfi</th>
+            <th scope="col">Batafsil</th>
+          </tr>
+        </thead>
+            {% for student in object_list %}
+                {% if student.class_letter == "C" or student.class_letter == "c"    %}
+                 {% if  student.class_id == 11  %}
+                <div class="product">
+                    <tbody>
+                        <tr>
+                          <th scope="row">{{ student.id }}</th>
+                          <td>{{ student.name }}</td>
+                          <td>{{ student.class_id }} {{student.class_letter}}</td>
+                          <td><a href="{% url 'students_detail' student.pk %}"><button  type="button" class="btn btn-success">Kirish</button></a></td>
+                        </tr>
+                    </tbody>
+                </div>
+            {% endif %}
+                {% endif %}
+            {% endfor %}
+</table>
+
+<hr>
+
+
+{% endblock content %}
+

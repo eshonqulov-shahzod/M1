@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block content %}
+    <hr>
+    <div>
+        <div   align="center">
+            <h1>O'chirish ! </h1>
+        </div>
+        <br>
+        <br>
+            <form action="" method="post">{% csrf_token %}
+            <p>"{{ object.name }}"ni o'chirishni istaysizmi ?</p>
+                <br>
+                <br>
+                <div  align="center">
+                    <button class="btn btn-danger ml-2" type="submit">Ha</button>
+                </div>
+            </form>
+    </div>
+
+    <hr>
+{% endblock content %}

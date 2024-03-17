@@ -1,0 +1,15 @@
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    <hr>
+    <h1>Yangi o'quvchi qo'shish</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+    <button class="btn btn-success ml-2" type="submit">Saqlash</button>
+    </form>
+
+
+    <hr>
+{% endblock content %}

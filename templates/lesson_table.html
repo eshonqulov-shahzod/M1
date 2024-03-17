@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <hr>
+    <div align="center">
+            <h1 style="font-size:60px;">O'quvchilar dars jadvali:</h1>
+    </div>
+        <br>
+        <div class="accordion accordion-flush" id="accordionFlushExample" >
+            {% if lessonobject.lesson.grade == 1 %}
+              <div class="accordion-item" align="center">
+                <h2 class="accordion-header" >
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" >
+                      <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8544;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>{{ lessonobject.lesson.0.letter }} sinf</h2>
+                      <div><img src="{{ lessonobject.lesson.0.photo.url }}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+              <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8545;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8546;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8547;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+               </div>
+
+              <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8548;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+               </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8549;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8550;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8551;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8552;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8553;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" align="center">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                    <span class="space">&nbsp;&nbsp;&nbsp;</span>
+                      &#8554;  Sinf
+                  </button>
+                </h2>
+                <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+    <hr>
+{% endblock content %}

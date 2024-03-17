@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <hr>
+
+
+	<article id="post-182" class="post-182 page type-page status-publish hentry">
+		<header class="entry-header">
+			<div align="center">
+			<h1 class="entry-title">Qo’ng’iroqlar jadvali</h1>
+			</div>
+		</header>
+		{% for object in tableobject.table %}
+		<div class="entry-content" align="center">
+			<p style="color: red; text-align: center;">
+			<table class="s" style="margin: 0px 150px; border-collapse: collapse; width: 192pt;" border="0" width="256" cellspacing="0" cellpadding="0">
+			<colgroup>
+				<col style="width: 48pt;" span="4" width="64" /> </colgroup>
+			<tbody>
+				<strong><h2>{{object.name}}</h2></strong>
+				<hr>
+				<hr>
+				<div class="col-sm-12">
+					<img src="{{object.photo.url}}" alt="" width='575px' height="400px">
+				</div>
+
+			</tbody>
+		</table>
+			<p style="text-align: center;">
+		</div><!-- .entry-content -->
+		{% endfor %}
+		<footer class="entry-meta">
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+
+
+    <hr>
+{% endblock content %}

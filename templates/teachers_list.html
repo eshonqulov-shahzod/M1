@@ -1,0 +1,48 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+        <div  align="center">
+            <h1>Maktab o'qituvchilari ro'yxati:</h1>
+        </div>
+
+<table class="table table-bordered border-primary">
+
+        <thead>
+          <tr>
+            <th scope="col">&#8470;</th>
+            <th scope="col">I/F/Sh</th>
+            <th scope="col">Fan nomi</th>
+            <th scope="col">Tel raqami</th>
+            <th scope="col">Batafsil</th>
+          </tr>
+        </thead>
+
+            {% for teacher in object_list %}
+
+                <div class="product">
+                    <tbody>
+                        <tr>
+                          <th>{{ forloop.counter }}</th>
+                          <td>{{ teacher.name }}</td>
+                          <td>{{ teacher.position }}</td>
+                          <td>{{ teacher.phone }}</td>
+                          <td><a href="{% url 'teachers_detail' teacher.pk %}"><button  type="button" class="btn btn-success">Kirish</button></a></td>
+                        </tr>
+                    </tbody>
+                </div>
+
+            {% endfor %}
+
+</table>
+
+<div class="d-grid gap-2"  align="right">
+    <a href="{% url 'teachers_new' %}"><button class="btn btn-primary" type="button">Yangi o'qituvchi qo'shish:</button></a>
+</div>
+
+    <hr>
+{% endblock content %}
+
+
+
