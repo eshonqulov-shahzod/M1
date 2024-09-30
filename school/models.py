@@ -59,14 +59,27 @@ class AboutStaff(models.Model):
     level = models.CharField(max_length=150)
 
 
-class AboutVideos(models.Model):
-    name = models.CharField(max_length=255)
-    video = models.FileField(upload_to='videos/display/')
-    photo = models.ImageField(upload_to='images/display/')
-    time = models.DateTimeField(auto_now_add=True)
+class YouTubeVideo(models.Model): # About saxifasidagi videoning moduli
+    title = models.CharField(max_length=200) # Videoning tepasidagi yozuvi
+    video_url = models.URLField()  # YouTube video URL-ni saqlash uchun
+    added_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.title
+
+
+#class AboutVideos(models.Model):
+#    name = models.CharField(max_length=255)  # Video nomi
+#    video_url = models.URLField(default=True)  # YouTube video havolasi
+#    time = models.DateTimeField(auto_now_add=True)  # Qo'shilgan vaqti
+#
+#    def __str__(self):
+#        return self.name
+#
+#    def embed_url(self):
+#        # YouTube havolasidan video ID'sini ajratish va embed formatga o'tkazish
+#        video_id = self.video_url.split('v=')[-1]
+#        return f"https://www.youtube.com/embed/{video_id}"
 
 
 class AboutGallery(models.Model):
@@ -75,13 +88,21 @@ class AboutGallery(models.Model):
 
 
 class ContactAddress(models.Model):
-    pass
-    #name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255, verbose_name="Manzil")
+    phone = models.CharField(max_length=20, verbose_name="Telefon raqami")
+    email = models.EmailField(verbose_name="Email")
+    fax = models.CharField(max_length=20, verbose_name="Faks")
+    telegram = models.CharField(max_length=50, verbose_name="Telegram", blank=True, null=True)
+    facebook = models.CharField(max_length=50, verbose_name="Facebook", blank=True, null=True)
+
+    def __str__(self):
+        return self.address
 
 
 class ContactMap(models.Model):
-    pass
-    #name = models.CharField(max_length=255)
+    title = models.CharField(max_length=200)
+    map_url = models.URLField()  # Xaritadagi joylashuv URL-ni saqlash uchun
+    added_date = models.DateTimeField(auto_now_add=True)
 
 
 class LessonTable(models.Model):

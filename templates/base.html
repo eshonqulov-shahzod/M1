@@ -73,14 +73,14 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="top-social">
-            <a href="{{ object.facebook_address }}"><i class="fa fa-facebook"></i></a>
-            <a href="{{ object.youtube_address }}"><i class="fa fa-youtube"></i></a>
-            <a href="{{ object.telegram_channel_address }}"><i class="fa fa-telegram"></i></a>
-            <a href="{{ object.instagram_address }}"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@shahzodeshonqulov1249"><i class="fa fa-youtube"></i></a>
+            <a href="https://t.me/eshonqulov_shahzod"><i class="fa fa-telegram"></i></a>
+            <a href="https://www.instagram.com/shahzod_eshonqulov/"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
-            <li><i class="fa fa-phone"></i><a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a></li>
-            <li><i class="fa fa-envelope"></i><a href = "mailto: {{ object.email }}">{{ object.email }}</a></li>
+            <li><i class="fa fa-phone"></i><a href="tel:+998906086103">(90) 608 61 03</a></li>
+            <li><i class="fa fa-envelope"></i><a href = "mailto: eshonshahzod01@gmail.com">eshonshahzod01@gmail.com</a></li>
         </ul>
     </div>
     <!-- Offcanvas Menu Section End -->
@@ -92,19 +92,18 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i><a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a></li>
-                            <li><i class="fa fa-envelope"></i><a href = "mailto: {{ object.email }}">{{ contactobject.0.email }}</a></li>
+                            <li><i class="fa fa-phone"></i><a href="tel:+998906086103">(90) 608 61 03</a></li>
+                            <li><i class="fa fa-envelope"></i><a href = "mailto: eshonshahzod01@gmail.com">eshonshahzod01@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <div class="tn-right">
                             <div class="top-social">
-                                <a href="{{ contactobject.0.facebook_address }}"><i class="fa fa-facebook"></i></a>
-                                <a href="{{ contactobject.0.youtube_address }}"><i class="fa fa-youtube"></i></a>
-                                <a href="{{ contactobject.0.telegram_channel_address }}"><i class="fa fa-telegram"></i></a>
-                                <a href="{{ contactobject.0.instagram_address }}"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.youtube.com/@shahzodeshonqulov1249"><i class="fa fa-youtube"></i></a>
+                                <a href="https://t.me/eshonqulov_shahzod"><i class="fa fa-telegram"></i></a>
+                                <a href="https://www.instagram.com/shahzod_eshonqulov/"><i class="fa fa-instagram"></i></a>
                             </div>
-
                             <a href="{% url 'index' %}" class="bk-btn">33 maktab</a>
                             <div class="language-option">
                                 <img src="{% static 'img/flag-uz.png' %}" alt="">
@@ -124,14 +123,13 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                        <div class="col-lg-2">
-                            <div class="logo">
-                                <a href="{% url 'index' %}">
-                                    <img src="{{ logo12w.photo.url }}" alt="" width='60px' height='40px'>
-                                    <h1>{{ logo1a2.name }}</h1>
-                                </a>
-                            </div>
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="{%url 'index'%}">
+                                <img src="{% static 'img/33logo.png' %}" alt=""  width='60px' height="40px">
+                            </a>
                         </div>
+                    </div>
                     <div class="col-lg-10">
                         <div class="nav-menu">
                             <nav class="mainmenu">
@@ -156,7 +154,6 @@
         </div>
     </header>
 
-
         {% block content %}
 
         {% endblock content %}
@@ -177,7 +174,7 @@
                         <div class="ft-about">
                             <div class="logo">
                                 <a href="{% url 'index' %}">
-                                    <img src="{{ object.photo.url }}" alt="" width='100px' height="60px">
+                                    <img src="{% static 'img/33logo.png' %}" alt="" width='100px' height="60px">
                                 </a>
                             </div>
                             <p>Maktabimizning ichtimoiy tarmoqlardagi<br /> saxifalari !</p>

@@ -11,7 +11,7 @@ from .models import (
     AboutName,
     AboutStaff,
     AboutGallery,
-    AboutVideos,
+    YouTubeVideo,
     ContactMap,
     ContactAddress,
     TableTime,
@@ -59,12 +59,20 @@ class AboutUsUrls(ListView):
             'about_name': AboutName.objects.all(),
             'about_staff': AboutStaff.objects.order_by('-id')[:3],
             'about_gallery': AboutGallery.objects.order_by('-id')[:4],
-            'about_video': AboutVideos.objects.all(),
+            'about_video': YouTubeVideo.objects.order_by('-id')[:1],
         }
 
 
-class ContactInformationUrls(TemplateView):
+class ContactInformationUrls(ListView):
+    model = ContactMap
     template_name = 'contact.html'
+    context_object_name = "contactobject"
+
+    def get_queryset(self):
+        return{
+            'contact_map': ContactMap.objects.order_by('-id')[:1],
+            'contact_address': ContactAddress.objects.order_by('-id')[:1],
+        }
 
 
 class TableTimeUrls(ListView):

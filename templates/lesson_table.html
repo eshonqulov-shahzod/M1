@@ -9,7 +9,6 @@
     </div>
         <br>
         <div class="accordion accordion-flush" id="accordionFlushExample" >
-            {% if lessonobject.lesson.grade == 1 %}
               <div class="accordion-item" align="center">
                 <h2 class="accordion-header" >
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" >
@@ -19,12 +18,13 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                      <h2>{{ lessonobject.lesson.0.letter }} sinf</h2>
-                      <div><img src="{{ lessonobject.lesson.0.photo.url }}" alt="" width='700px' height="700px"></div>
+                      <h2>"A" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
+                      <h2>"B" sinf</h2>
+                      <div><img src="{% static 'img/dars-j.png' %}" alt="" width='700px' height="700px"></div>
                   </div>
                 </div>
               </div>
-            {% endif %}
 
               <div class="accordion-item" align="center">
                 <h2 class="accordion-header">

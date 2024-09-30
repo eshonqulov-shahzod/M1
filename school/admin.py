@@ -6,7 +6,7 @@ from .models import (
     HomeBlog,
     HomePhotoRoom,
     HomePhotoUniform,
-    AboutVideos,
+    YouTubeVideo,
     AboutGallery,
     AboutName,
     AboutStaff,
@@ -14,6 +14,8 @@ from .models import (
     LessonTable,
     LogoFoto,
     Contact,
+    ContactMap,
+    ContactAddress
     )
 
 # Register your models here.
@@ -39,11 +41,13 @@ admin.site.register(HomePhoto1, GalleryAdmin)
 admin.site.register(HomeBlog, GalleryAdmin)
 admin.site.register(HomePhotoRoom, GalleryAdmin)
 admin.site.register(HomePhotoUniform, GalleryAdminUniform)
-admin.site.register(AboutVideos, GalleryAdmin)
+admin.site.register(YouTubeVideo)
 admin.site.register(AboutGallery, GalleryAdmin)
 admin.site.register(AboutName)
 admin.site.register(AboutStaff, GalleryAdmin)
 admin.site.register(TableTime, GalleryAdmin)
 admin.site.register(LessonTable, GalleryAdmin)
+admin.site.register(ContactMap)
+admin.site.register(ContactAddress)
 
 
