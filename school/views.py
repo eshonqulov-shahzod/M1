@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import ListView
-from django.views.generic import TemplateView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView, TemplateView, DetailView
+
 from .models import (
     LogoFoto,
     Contact,
@@ -16,6 +16,7 @@ from .models import (
     ContactAddress,
     TableTime,
     LessonTable,
+
 
     )
 
@@ -37,16 +38,35 @@ class IndexUrls(ListView):
         }
 
 
-class BlogUrls(ListView):
+#class BlogUrls(ListView):
+#    model = HomeBlog
+#    template_name = 'blog.html'
+#    context_object_name = 'blogobject'
+#
+#    def get_queryset(self):
+#        return {
+#            'blog': HomeBlog.objects.order_by('-id')[:18],
+#            'blog_full': HomeBlog.objects.order_by('-id')
+#        }
+#
+
+class HomeBlogListView(ListView):
     model = HomeBlog
     template_name = 'blog.html'
-    context_object_name = 'blogobject'
+    context_object_name = 'blogs'
+    paginate_by = 9  # Har bir sahifada 20 ta yangilikni ko'rsatadi.
 
     def get_queryset(self):
-        return {
-            'blog': HomeBlog.objects.order_by('-id')[:18],
-            'blog_full': HomeBlog.objects.order_by('-id')
-        }
+        return HomeBlog.objects.order_by('-id')  # Yangiliklarni sanasi bo'yicha kamayish tartibida chiqarish.
+
+
+class HomeBlogDetailView(DetailView):
+    model = HomeBlog
+    template_name = 'homeblog_detail.html'
+    context_object_name = 'blog'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(HomeBlog, pk=self.kwargs.get('pk'))
 
 
 class AboutUsUrls(ListView):

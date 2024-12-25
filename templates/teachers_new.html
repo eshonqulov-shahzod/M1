@@ -1,15 +1,23 @@
 {% extends 'base2.html' %}
-{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
-    <hr>
-    <h1>Yangi o'qituvchi qo'shish</h1>
-    <form method="post" enctype="multipart/form-data">{% csrf_token %}
-        {{ form.as_p }}
-    <button class="btn btn-success ml-2" type="submit">Saqlash</button>
-    </form>
+  <link rel="stylesheet" href="{% static 'css/teachers-edit.css' %}">
+    <div class="container my-5">
+        <h1 class="text-center mb-4 text-primary">Yangi O'qituvchi Qo'shish</h1>
 
+        <form method="post" enctype="multipart/form-data" class="p-4 border shadow-sm rounded bg-white">
+            {% csrf_token %}
 
-    <hr>
+            <!-- Formani p tag'lari bilan chiqarish -->
+            <div class="form-group mb-4">
+                {{ form.as_p }}
+            </div>
+
+            <!-- Saqlash tugmasi -->
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg">Saqlash</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}

@@ -1,0 +1,104 @@
+/* Umumiy dizayn */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Karta Konteyner */
+.teacher-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* Karta Dizayni */
+.teacher-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Rasm Qismi */
+.teacher-image {
+    width: 100%;
+    height: 100%;
+}
+
+.teacher-image img {
+    width: 100%;
+    height: auto;  /* Rasmning balandligini avtomatik ravishda belgilaymiz */
+    max-height: 400px;  /* Maksimal rasm balandligi */
+    object-fit: contain;  /* Rasmni konteynerga moslashtirish */
+    display: block;
+    margin: 0 auto;  /* Rasmni markazlashtirish */
+}
+
+/* Ma'lumotlar */
+.teacher-info {
+    padding: 25px 30px;
+    flex: 1;
+}
+
+.teacher-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.teacher-details p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.teacher-details strong {
+    color: #555;
+    font-size: 20px;
+}
+
+/* Tugmalar */
+.teacher-actions {
+    margin-top: 20px;
+}
+
+.teacher-actions .btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.teacher-actions .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.teacher-actions .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.teacher-actions .btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.teacher-actions .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}

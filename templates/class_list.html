@@ -1,0 +1,60 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+  <title>Sinflar Ro'yxati</title>
+
+  <link rel="stylesheet" href="{% static 'css/class-name.css' %}">
+
+  <body>
+  <br>
+  <div  align="center">
+    <h1>MAKTAB SINFLARI</h1>
+  </div>
+
+
+    {%for clase in object_list%}
+      <a href="{% url 'students_list' clase.pk %}">
+        <ol class="olcards">
+            <li style="--cardColor:#36aeb3; --dynamicNumber: '{% if clase.class_id|add:0 < 10 %}0{{ clase.class_id }}{% else %}{{ clase.class_id }}{% endif %}'">
+              <div class="content">
+                <div class="text"><h2>{{ clase.class_letter }}</h2></div>
+                <div class="title">{{ clase.name }}</div>
+                <div class="text">Sinf raxbari: {{ clase.class_teacher }}</div>
+              </div>
+            </li>
+
+
+          <!--
+          <li style="--cardColor:#36aeb3">
+            <div class="content">
+              <div class="icon">😁</div>
+              <div class="title">Lorem Ipsum</div>
+              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, voluptatem.</div>
+            </div>
+          </li>
+          <li style="--cardColor:#162d59">
+            <div class="content">
+              <div class="icon">😉</div>
+              <div class="title">Lorem Ipsum</div>
+              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, voluptatem.</div>
+            </div>
+          </li>
+          <li style="--cardColor:#f15f0e">
+            <div class="content">
+              <div class="icon">😜</div>
+              <div class="title">Lorem Ipsum</div>
+              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, voluptatem.</div>
+            </div>
+          </li>
+          /-->
+        </ol>
+      </a>
+    {%endfor%}
+
+
+  </body>
+
+
+
+{% endblock content %}

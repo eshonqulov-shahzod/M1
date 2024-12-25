@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <link rel="stylesheet" href="{% static 'css/homeblog_detail.css' %}">
+
+<div class="container my-5">
+    <div class="blog-detail card shadow-lg p-4">
+        <!-- Title -->
+        <h2 class="blog-title text-center mb-4">{{ blog.name }}</h2>
+
+        <!-- Image -->
+        <img src="{{ blog.photo.url }}" alt="{{ blog.name }}" class="img-fluid rounded mb-4">
+
+        <!-- Meta Information -->
+        <div class="blog-meta text-muted d-flex justify-content-between align-items-center mb-4">
+            <span><i class="bi bi-clock me-1"></i>{{ blog.data|date:"d-m-Y H:i" }}</span>
+            <span><i class="bi bi-person me-1"></i>Muallif: {{ blog.author }}</span>
+        </div>
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+            <p class="text-justify">{{ blog.detail }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

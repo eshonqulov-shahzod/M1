@@ -1,24 +1,30 @@
 {% extends 'base2.html' %}
-
 {% load static %}
-
 {% block content %}
-    <hr>
-<h1>{{ object.name }}</h1>
-    <div class="d-flex position-relative">
-      <img src="{{ object.photo.url }}" class="flex-shrink-0 me-3" alt="..." width='370px' height="340px">
-      <div>
-        <h2>Otasini I.F.Sh: {{object.name_father}}</h2>
-        <h2>Otasini tel raqami: {{object.phone_father}}</h2>
-        <h2>Onasini I.F.Sh: {{object.name_mom}}</h2>
-        <h2>Onasini tel raqami: {{object.phone_mom}}</h2>
-        <h2>O'quvchi sinfi:  {{ object.class_id }} {{object.class_letter}}</h2>
-        <a href="{% url 'students_edit' object.pk %}"><button type="button" class="btn btn-primary">Tahrirlash</button></a>
-        <a href="{% url 'students_delete' object.pk %}"><button type="button" class="btn btn-danger">O'chirish</button></a>
-      </div>
+
+    <title>O'quvchi ma'lumotlari</title>
+
+<link rel="stylesheet" href="{% static 'css/students-detail.css' %}">
+
+<div class="student-detail-container {% if object.from_module %}from-module{% else %}normal{% endif %}">
+    <div class="student-card">
+        <div class="student-image">
+            <img src="{{ object.photo.url }}" alt="{{ object.name }}">
+        </div>
+        <div class="student-info">
+            <h1 class="student-name">{{ object.name }}</h1>
+            <p><strong>Otasini I.F.Sh:</strong> {{ object.name_father }}</p>
+            <p><strong>Otasini tel raqami:</strong> {{ object.phone_father }}</p>
+            <p><strong>Onasini I.F.Sh:</strong> {{ object.name_mom }}</p>
+            <p><strong>Onasini tel raqami:</strong> {{ object.phone_mom }}</p>
+            <p><strong>O'quvchi sinfi:</strong> {{ object.class_name.class_id }} {{ object.class_name.class_letter }}</p>
+            <div class="student-actions">
+                <a href="{% url 'students_edit' object.pk %}" class="btn btn-primary">Tahrirlash</a>
+                <!--
+                <a href="{% url 'students_delete' object.pk %}" class="btn btn-danger">O'chirish</a>
+                -->
+            </div>
+        </div>
     </div>
-
-
-
-    <hr>
+</div>
 {% endblock content %}

@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (
     IndexUrls,
-    BlogUrls,
+    HomeBlogListView,
+    HomeBlogDetailView,
     AboutUsUrls,
     ContactInformationUrls,
     TableTimeUrls,
@@ -10,7 +11,8 @@ from .views import (
 
 urlpatterns = [
     path('', IndexUrls.as_view(), name='index'),
-    path('blog/', BlogUrls.as_view(), name='blog'),
+    path('blog/', HomeBlogListView.as_view(), name='blog'),
+    path('blog/<int:pk>/', HomeBlogDetailView.as_view(), name='homeblog_detail'),
     path('about/', AboutUsUrls.as_view(), name='about'),
     path('contact/', ContactInformationUrls.as_view(), name='contact'),
     path('tabletime/', TableTimeUrls.as_view(), name='tabletime'),

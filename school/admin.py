@@ -15,7 +15,8 @@ from .models import (
     LogoFoto,
     Contact,
     ContactMap,
-    ContactAddress
+    ContactAddress,
+
     )
 
 # Register your models here.
@@ -49,5 +50,7 @@ admin.site.register(TableTime, GalleryAdmin)
 admin.site.register(LessonTable, GalleryAdmin)
 admin.site.register(ContactMap)
 admin.site.register(ContactAddress)
+
+
 
 

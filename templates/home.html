@@ -1,11 +1,25 @@
 {% extends 'base2.html' %}
-
 {% load static %}
-
 {% block content %}
+
+    <title>Maktab ma'lumotlari</title>
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="news-container">
+    <div class="header">
+        <h1>Yangiliklar</h1>
+    </div>
     <hr>
-        <div  align="center">
-            <h1>Xush kelibsiz !</h1>
-        </div>
-    <hr>
+    <div class="news-list">
+        {% for news in news_list %}
+            <div class="news-item">
+                <h2>{{ news.title }}</h2>
+                <p class="date">{{ news.created_at|date:"d-m-Y" }}</p>
+                <p><a class="read-more" href="{% url 'news_detail' news.id %}">Batafsil o'qish...</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}

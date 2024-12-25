@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home-new.css' %}">
+
+<div class="news-detail-container">
+    <div class="news-detail">
+        <h1 class="news-title">{{ news.title }}</h1>
+        <p class="news-date">{{ news.created_at|date:"d-m-Y" }}</p>
+        {% if news.image %}
+            <img class="news-image" src="{{ news.image.url }}" alt="{{ news.title }}">
+        {% endif %}
+        <div class="news-content">
+            <p>{{ news.content }}</p>
+        </div>
+    </div>
+    <a class="back-button" href="{% url 'news_list' %}">Ortga qaytish</a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+    <title>Sinf</title>
+
+<br>
+<div align="center">
+    <h1>{{ class_id }}-sinf "{{ class_letter }}" o'quvchilari ro'yxati:</h1>
+</div>
+
+<hr>
+<div class="d-grid gap-2" align="right">
+    <a href="{% url 'students_new' %}"><button class="btn btn-primary" type="button">Yangi o'quvchi qo'shish</button></a>
+</div>
+
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th scope="col">&#8470;</th>
+            <th scope="col">I/F/Sh</th>
+            <th scope="col">O'quvchi sinfi</th>
+            <th scope="col">Batafsil</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <th scope="row">{{ student.id }}</th>
+            <td>{{ student.name }}</td>
+            <td>{{ student.class_id }} {{ student.class_letter }}</td>
+            <td><a href="{% url 'students_detail' student.pk %}"><button type="button" class="btn btn-success">Kirish</button></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<hr>
+<br>
+
+{% endblock content %}

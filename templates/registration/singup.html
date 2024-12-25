@@ -1,19 +1,18 @@
 {% extends 'base2.html' %}
-
+{% load static %}
 {% block content %}
-        <br>
-        <br>
-<div  align="center">
-    <h2> Admin qo'shish </h2>
-</div>
-        <br>
-        <br>
-    <form method='post'> {% csrf_token %}
-        {{ form.as_p }}
-        <br>
-        <br>
-        <div align="center">
-            <button type="submit" class="btn btn-success">Yaratish</button>
-        </div>
-    </form>
+  <link rel="stylesheet" href="{% static 'css/singup-css.css' %}">
+    <div class="form-container">
+        <h2 class="form-title">Admin Qo'shish</h2>
+        <form method="post" class="form-content">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <div class="form-submit">
+                <button type="submit" class="btn btn-success">Yaratish</button>
+            </div>
+        </form>
+    </div>
+
 {% endblock content %}

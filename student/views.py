@@ -1,8 +1,31 @@
 from django.views.generic import ListView, TemplateView, DetailView
+from django.http import HttpResponseForbidden
+from django.template.loader import render_to_string
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
-from .models import Workers, Teachers, Students
+from .models import Workers, Teachers, Students, ClassName, News
+
+
+def my_custom_403_view(request, exception=None):
+    # Maxsus 403 xatolik sahifasini ko'rsatish
+    html = render_to_string('403.html', {'request': request})
+    return HttpResponseForbidden(html)
+
+
+# Yangiliklar ro'yxati uchun CBV
+class NewsListView(LoginRequiredMixin, ListView):
+    model = News
+    template_name = 'home.html'  # Yangiliklar ro'yxati shabloni
+    context_object_name = 'news_list'  # Shablonga o'tadigan kontekst nomi
+    ordering = ['-created_at']  # Yaratilgan vaqt bo'yicha teskari tartib
+
+
+# Yangilik tafsilotlari uchun CBV
+class NewsDetailView(LoginRequiredMixin, DetailView):
+    model = News
+    template_name = 'home_new.html'  # Yangilik tafsiloti shabloni
+    context_object_name = 'news'  # Shablonga o'tadigan kontekst nomi
 
 
 class HomeView(LoginRequiredMixin, TemplateView):
@@ -95,59 +118,89 @@ class TeachersCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return self.request.user.is_superuser
 
 
-class StudentsListView1(LoginRequiredMixin, ListView):
+#def class_students(request, class_id, class_letter):
+#    students = Students.objects.filter(class_id=class_id, class_letter__iexact=class_letter)
+#    context = {
+#        'students': students,
+#        'class_id': class_id,
+#        'class_letter': class_letter.upper(),
+#    }
+#    return render(request, 'class_students.html', context)
+
+
+class ClassNameView(LoginRequiredMixin, ListView):
+    model = ClassName
+    template_name = 'class_list.html'
+
+
+#class ClassNameView(LoginRequiredMixin, ListView):
+#    template_name = 'base2.html'
+#
+#    def get_context_data(self, **kwargs):
+#        context = super().get_context_data(**kwargs)
+#        context['names'] = ClassName.objects.all()  # Ma'lumotlar bazasidan obyektlar
+#        print(context['menu_items'])
+#        return context
+
+
+class StudentsListView(LoginRequiredMixin, ListView):
     model = Students
-    template_name = 'students_list_1.html'
+    template_name = 'students_list.html'
+    context_object_name = 'students_list'
+
+    def get_queryset(self):
+        # URL orqali kelgan sinf `pk` bo‘yicha talabalarni filtrlash
+        return Students.objects.filter(class_name_id=self.kwargs['pk'])
 
 
-class StudentsListView2(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_2.html'
-
-
-class StudentsListView3(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_3.html'
-
-
-class StudentsListView4(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_4.html'
-
-
-class StudentsListView5(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_5.html'
-
-
-class StudentsListView6(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_6.html'
-
-
-class StudentsListView7(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_7.html'
-
-
-class StudentsListView8(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_8.html'
-
-
-class StudentsListView9(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_9.html'
-
-
-class StudentsListView10(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_10.html'
-
-
-class StudentsListView11(LoginRequiredMixin, ListView):
-    model = Students
-    template_name = 'students_list_11.html'
+#class StudentsListView2(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_2.html'
+#
+#
+#class StudentsListView3(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_3.html'
+#
+#
+#class StudentsListView4(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_4.html'
+#
+#
+#class StudentsListView5(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_5.html'
+#
+#
+#class StudentsListView6(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_6.html'
+#
+#
+#class StudentsListView7(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_7.html'
+#
+#
+#class StudentsListView8(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_8.html'
+#
+#
+#class StudentsListView9(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_9.html'
+#
+#
+#class StudentsListView10(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_10.html'
+#
+#
+#class StudentsListView11(LoginRequiredMixin, ListView):
+#    model = Students
+#    template_name = 'students_list_11.html'
 
 
 class StudentsDetailView(LoginRequiredMixin, DetailView):
@@ -157,7 +210,8 @@ class StudentsDetailView(LoginRequiredMixin, DetailView):
 
 class StudentsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Students
-    fields = ('name', 'class_id', 'class_letter', 'name_father', 'name_mom', 'phone_father', 'phone_mom', 'photo')
+    fields = ('name', 'class_name', 'name_father', 'name_mom',
+              'phone_father', 'phone_mom', 'photo')
     template_name = 'students_edit.html'
 
     def test_func(self):
@@ -177,7 +231,8 @@ class StudentsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class StudentsCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Students
-    fields = ('name', 'class_id', 'class_letter', 'name_father', 'name_mom', 'phone_father', 'phone_mom', 'photo')
+    fields = ('name', 'class_id', 'class_letter', 'name_father', 'name_mom',
+              'phone_father', 'phone_mom', 'photo', 'class_head')
     template_name = 'students_new.html'
 
     def form_valid(self, form):

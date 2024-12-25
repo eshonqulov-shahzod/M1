@@ -35,8 +35,8 @@ class HomePhotoRoom(models.Model):
 
 
 class HomeBlog(models.Model):
-    name = models.CharField(max_length=200)
-    short_name = models.CharField(max_length=20)
+    name = models.CharField(max_length=300)
+    short_name = models.CharField(max_length=40)
     photo = models.ImageField(upload_to='images/display/')
     detail = models.TextField()
     data = models.DateTimeField()
@@ -140,4 +140,5 @@ class Contact(models.Model):
     instagram_address = models.URLField(null=True, blank=True)
     telegram_bot_address = models.URLField(null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
+
 

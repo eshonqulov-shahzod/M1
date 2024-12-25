@@ -1,0 +1,102 @@
+/* Umumiy dizayn */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Karta konteyner */
+.worker-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* Karta dizayni */
+.worker-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Rasm qismi */
+.worker-image {
+    width: 100%;
+    height: auto;
+}
+
+.worker-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Ma'lumotlar */
+.worker-info {
+    padding: 20px 30px;
+}
+
+.worker-name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+
+.worker-details p {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.worker-details strong {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Tugmalar */
+.worker-actions {
+    margin-top: 20px;
+}
+
+.worker-actions .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.worker-actions .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.worker-actions .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.worker-actions .btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.worker-actions .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}

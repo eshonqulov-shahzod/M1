@@ -1,0 +1,56 @@
+/* Container Styling */
+.news-container {
+    margin-top: 20px;
+}
+
+/* Individual News Item */
+.news-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.news-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Content Area */
+.news-content {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Time Styling */
+.news-time {
+    font-size: 0.85rem;
+    color: #1c1b1b;
+    margin-bottom: 5px;
+}
+
+/* Title Styling */
+.news-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.news-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-title a:hover {
+    color: #254261;
+}
